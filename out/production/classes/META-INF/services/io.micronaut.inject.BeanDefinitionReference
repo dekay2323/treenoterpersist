@@ -1,4 +1,0 @@
-example.$HelloControllerDefinitionClass
-dk.treenoter.web.$DataControllerDefinitionClass
-dk.treenoter.db.$PersistReddisDefinitionClass
-dk.treenoter.web.$SaveControllerDefinitionClass
