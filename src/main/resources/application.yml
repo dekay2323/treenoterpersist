@@ -1,0 +1,13 @@
+micronaut:
+    server:
+        port: 8080
+    application:
+        name: TreeNoterRest
+endpoints:
+    health:
+        enabled: Boolean
+        sensitive: Boolean
+        id: String
+redis:
+    uri: redis://localhost
+

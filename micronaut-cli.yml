@@ -1,0 +1,5 @@
+profile: service
+defaultPackage: treenoterrest
+---
+testFramework: spock
+sourceLanguage: groovy
