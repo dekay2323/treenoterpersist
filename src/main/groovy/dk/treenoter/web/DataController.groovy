@@ -30,21 +30,22 @@ class DataController {
     CompletableFuture<HttpResponse<DataAdapter>> update(String id, @Body CompletableFuture<DataAdapter> data) {
         return data.thenApply {
             assert id
-            assert data
-            assert id == it.id
-
-            return HttpResponse.created(persist.create(id, it));
+            assert it
+           
+            it.id = id;
+            
+            return HttpResponse.created(persist.update(id, it));
         }
     }
 
-    // curl -X GET localhost:8080/data/ea9e37c4-27d4-4023-abce-e35744ffc3d3
+    // curl -X GET localhost:8080/data/01fb64db-51f8-4843-b870-55ca8e5f573e
     @Get("/{id}")
     CompletableFuture<HttpResponse<DataAdapter>> show(String id) {
         CompletableFuture.supplyAsync {
             assert id
             
-            return HttpResponse.created(persist.show(id));
-        }.thenApply{ HttpResponse.ok(it)}
+            return HttpResponse.ok(persist.show(id));
+        }
     }
 
 }

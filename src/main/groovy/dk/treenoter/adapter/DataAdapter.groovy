@@ -1,5 +1,8 @@
 package dk.treenoter.adapter
 
+import groovy.transform.EqualsAndHashCode
+
+@EqualsAndHashCode
 class DataAdapter {
     String subject
     String text
